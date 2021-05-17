@@ -66,4 +66,23 @@ fun main(){
     val lastCharInStr=myStr[myStr.length-1]
     println("Last Character $lastCharInStr")
 
+    var valueStr="Android Masterclass"
+    val valueFloat=13.37F
+    val valueDouble=3.14159265358979
+    var valueShort: Short=25
+    var valueInt=2020
+    var valueLong: Long=1881234567
+    var valueBoolean=true
+    var valueChar='a'
+
+    println("String $valueStr")
+    var thirdCharInStr=valueStr[2]
+    println("Third Character $thirdCharInStr")
+    println("Float $valueFloat")
+    println("Double $valueDouble")
+    println("Short $valueShort")
+    println("Int $valueInt")
+    println("Long $valueLong")
+    println("Boolean $valueBoolean")
+    println("Char $valueChar")
 }
