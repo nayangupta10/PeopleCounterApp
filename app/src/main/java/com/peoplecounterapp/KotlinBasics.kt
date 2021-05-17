@@ -16,7 +16,6 @@ fun main(){
     Our IDE tell us that we can't overwrite 'val'
     myName="Neha"
      */
-
     println("Hello $myName")
 
     //var is mutable variable that could be change at run time
@@ -93,4 +92,25 @@ fun main(){
     println("Long $phoneNumber")
     println("Boolean $isGood")
     println("Char $firstCharecter")
+
+    //Arithmetic Operators(+,-,*,/,%)
+    var result=5+3
+    //result-=3
+    //result/=3
+    //result*=3
+    //% get the remainder
+    result%=3
+    println(result)
+
+    // also do like this
+    val a=11.0
+    val b=3
+    var resultInt=7
+    //because resultInt is Int to we convert a+b into Int by toInt() otherwise it will show error
+    resultInt=(a+b).toInt()
+    println(resultInt)
+
+    //The result will be in double because a is double type variable
+    var resultDouble= a/b
+    println(resultDouble)
 }
