@@ -23,6 +23,10 @@ fun main(){
     var hisName="Gaurav"
     //The value Sumit will be change at run-time
     hisName="Sumit"
+    //String Concatenation
+    println("Hi"+hisName)
+    //This is same as String Concatenation
+    //String Interpolation
     println("Hi $hisName")
 
     //Kotlin is a typed language so it know the type of variable
@@ -102,7 +106,7 @@ fun main(){
     result%=3
     println(result)
 
-    // also do like this
+    // also we can do like this
     val a=11.0
     val b=3
     var resultInt=7
@@ -113,4 +117,17 @@ fun main(){
     //The result will be in double because a is double type variable
     var resultDouble= a/b
     println(resultDouble)
+
+    //Comparision Operators(==,!=,>,<,>=,<=)
+    val isEqual= 2==3
+    println("isEqual $isEqual")
+
+    val isNotEqual= 2!=2
+    println("isNotEqual $isNotEqual")
+
+    //Also we can do like this there is no need to create variable
+    println("2greater3 ${2>3}")
+    println("2lower3 ${2<3}")
+    println("2greaterEqual3 ${2>=3}")
+    println("2lowerEqual2 ${2<=2}")
 }
