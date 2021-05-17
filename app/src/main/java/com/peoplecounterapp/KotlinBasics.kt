@@ -118,7 +118,7 @@ fun main(){
     var resultDouble= a/b
     println(resultDouble)
 
-    //Comparision Operators(==,!=,>,<,>=,<=)
+    //Comparision Operators(==, !=, >, <, >=, <=)
     val isEqual= 2==3
     println("isEqual $isEqual")
 
@@ -130,4 +130,27 @@ fun main(){
     println("2lower3 ${2<3}")
     println("2greaterEqual3 ${2>=3}")
     println("2lowerEqual2 ${2<=2}")
+
+    //Assignment Operators(+=, -=, *=, /=, %=)
+    var myNum=4
+    myNum+=3
+    myNum-=2
+    //same as myNum=myNum-2
+    println(myNum)
+
+    //Increment & Decrement Operators (++, --)
+    myNum++
+    println("myNum is $myNum")
+    //myNum++ means that it increase value after line
+    println("myNum is ${myNum++}")
+    //++myNum means that it increase value before line
+    println("myNum is ${++myNum}")
+
+    myNum--
+    println("myNum is $myNum")
+    println("myNum is ${--myNum}")
+    println("myNum is ${myNum--}")
+    println("myNum is $myNum")
+
+
 }
