@@ -17,12 +17,13 @@ fun main(){
     // here hisName is address and Sumit is value of this that is stored init.
     var hisName="Gaurav"
     hisName="Sumit"
-    print("Hi $hisName")
+    println("Hi $hisName")
 
     //Kotlin is a typed language so it know the type of variable
     //type String
     val name="Nayan"
     //type Int
+    //type inference finds out the type from context
     //It is mandatory to declare a variable otherwise it will error
     val myAge=32
 
@@ -40,4 +41,29 @@ fun main(){
     */
     val myFloat: Float=13.67F
     val myDouble: Double=3.57489570802802
+
+    //Boolean he type Boolean is used to represent logical values
+    //It have two type values true or false
+
+    /*there is no need to assign Boolean, String, Double, Int
+    and Float if it has value with F because of type inference
+     */
+    var myBoolean=true
+    myBoolean=false
+
+    //Characters
+    //Char has only one char character no matter what it is letter or digit
+    val letterChar: Char='N'
+    val digitChar='2'
+
+    //Strings
+    //String is a collection of Characters
+    val myStr="Hello Nayan"
+    val firstCharInStr=myStr[0]
+    println("First Character $firstCharInStr")
+
+    //myStr.length-1 because length starts from 0
+    val lastCharInStr=myStr[myStr.length-1]
+    println("Last Character $lastCharInStr")
+
 }
