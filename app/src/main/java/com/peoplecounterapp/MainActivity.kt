@@ -13,13 +13,13 @@ class MainActivity : AppCompatActivity() {
 
         //get reference to button
         val btnClickMe=findViewById<Button>(R.id.button)
-        var textCounter=findViewById<TextView>(R.id.text_view)
+        val textCounter=findViewById<TextView>(R.id.textView)
         var timeCounter=0
 
         //set on-clicklistener
         btnClickMe.setOnClickListener {
-            timeCounter=timeCounter+1
-            textCounter.text= timeCounter.toString() + " Times"
+            timeCounter += 1
+            textCounter.text= "$timeCounter Times"
 
             Toast.makeText(this@MainActivity,"Hi Nayan!",Toast.LENGTH_SHORT).show()
         }
