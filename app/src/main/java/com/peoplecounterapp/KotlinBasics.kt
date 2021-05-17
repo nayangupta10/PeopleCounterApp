@@ -11,11 +11,18 @@ fun main(){
     comment
      */
     val myName="Nayan"
+    /*If we change the value of val variable
+    the it will be compile-time-error.
+    Our IDE tell us that we can't overwrite 'val'
+    myName="Neha"
+     */
+
     println("Hello $myName")
 
     //var is mutable variable that could be change at run time
     // here hisName is address and Sumit is value of this that is stored init.
     var hisName="Gaurav"
+    //The value Sumit will be change at run-time
     hisName="Sumit"
     println("Hi $hisName")
 
@@ -66,23 +73,24 @@ fun main(){
     val lastCharInStr=myStr[myStr.length-1]
     println("Last Character $lastCharInStr")
 
-    var valueStr="Android Masterclass"
-    val valueFloat=13.37F
-    val valueDouble=3.14159265358979
-    var valueShort: Short=25
-    var valueInt=2020
-    var valueLong: Long=1881234567
-    var valueBoolean=true
-    var valueChar='a'
+    //Some Basic Exercise
+    var courseName="Android Masterclass"
+    val leet=13.37F
+    val pi=3.14159265358979
+    var age: Short=25
+    var year=2020
+    var phoneNumber: Long=1881234567
+    var isGood=true
+    var firstCharecter='a'
 
-    println("String $valueStr")
-    var thirdCharInStr=valueStr[2]
-    println("Third Character $thirdCharInStr")
-    println("Float $valueFloat")
-    println("Double $valueDouble")
-    println("Short $valueShort")
-    println("Int $valueInt")
-    println("Long $valueLong")
-    println("Boolean $valueBoolean")
-    println("Char $valueChar")
+    println("String $courseName")
+    var thirdCharInCourseName=courseName[2]
+    println("Third Character $thirdCharInCourseName")
+    println("Float $leet")
+    println("Double $pi")
+    println("Short $age")
+    println("Int $year")
+    println("Long $phoneNumber")
+    println("Boolean $isGood")
+    println("Char $firstCharecter")
 }
