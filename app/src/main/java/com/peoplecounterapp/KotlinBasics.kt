@@ -236,56 +236,74 @@ fun main() {
     }
 
     //in decreasing order
-     i = 100
+    i = 100
     while (i >= 0) {
         print("$i ")
-        i-=2
+        i -= 2
     }
     // \n break the line
     println("\nwhile loop is done")
-    
-    var feltTemperature="Hot"
-    var roomTemperature=32
-    while (feltTemperature=="Hot"){
+
+    var feltTemperature = "Hot"
+    var roomTemperature = 32
+    while (feltTemperature == "Hot") {
         roomTemperature--
-        if(roomTemperature<20){
-            feltTemperature="Comfy"
+        if (roomTemperature < 20) {
+            feltTemperature = "Comfy"
             println("It's comfy now")
         }
     }
 
     //do while loop
-   // i=1
-    i=15
+    // i=1
+    i = 15
     do {
         print("$i ")
-        i+=3
-    }while (i<=10)
+        i += 3
+    } while (i <= 10)
     println("\ndo while is done")
 
     //for loop
-    for(num in 1..10){
+    for (num in 1..10) {
         print("$num")
     }
     println()
 
     //also write like this
-    for (i in (1).until(10)){// same as for(i in 1 until 10)
+    for (i in (1).until(10)) {// same as for(i in 1 until 10)
         print("$i ")
     }
     println()
 
-    for(i in 10 downTo 1){// same as for(i in (10).downTo(1))
+    for (i in 10 downTo 1) {// same as for(i in (10).downTo(1))
         print("$i ")
     }
     println()
 
-    for(i in (10).downTo(1)step 2){// same as for(i in 10 downTo 1 step 2)
+    for (i in (10).downTo(1) step 2) {// same as for(i in 10 downTo 1 step 2)
         print("$i ")
     }
     println()
 
-    for (i in 1 until 10 step 3 ){
+    for (i in 1 until 10 step 3) {
         print("$i ")
+    }
+    print("\nfor loop is done\n")
+
+    //exercise
+    for (num in 0..10000) {
+        if (num == 9001)
+            println("IT'S OVER 9000!!!")
+    }
+
+    var humidity = "humid"
+    var humidityLevel = 80
+    while (humidity == "humid") {
+        humidityLevel -= 5
+        println("humidity decreased")
+        if (humidityLevel < 60) {
+            humidity = "Comfy"
+            println("It's comfy now")
+        }
     }
 }
