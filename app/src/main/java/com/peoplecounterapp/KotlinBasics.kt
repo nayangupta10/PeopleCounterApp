@@ -141,16 +141,43 @@ fun main(){
     //Increment & Decrement Operators (++, --)
     myNum++
     println("myNum is $myNum")
-    //myNum++ means that it increase value after line
+    //myNum++ means that it increase value after use
     println("myNum is ${myNum++}")
-    //++myNum means that it increase value before line
+    //++myNum means that it increase value before use
     println("myNum is ${++myNum}")
 
     myNum--
     println("myNum is $myNum")
+    //decrement before use
     println("myNum is ${--myNum}")
+    //decrement after use
     println("myNum is ${myNum--}")
     println("myNum is $myNum")
 
+    //If Statement
+    var agePerson=17
 
+    if(agePerson>=21){
+        println("You may drink in US now")
+    }else if (agePerson>=18){
+        println("You may vote now")
+    }else if(agePerson>=16){
+        println("You may drive now")
+    }else{
+        println("You are too young")
+    }
+
+    var heightPerson1=190
+    var heightPerson2=170
+
+    if(heightPerson1>heightPerson2)
+        println("Use raw force")
+    else if(heightPerson1==heightPerson2)
+        println("Use your power technique 1337")
+    else
+        println("Use technique")
+
+    var isRainy=true
+    if(isRainy)
+        println("Weather is cool")
 }
