@@ -1,5 +1,7 @@
 package com.peoplecounterapp
 
+import javax.xml.transform.dom.DOMLocator
+
 fun main() {
     println("Hello World!")
 
@@ -306,4 +308,36 @@ fun main() {
             println("It's comfy now")
         }
     }
+
+    //call a function
+    myFunction()
+    //where 2 and 8 are agrument
+    /*
+    parameter and Argument are two different things
+    parameter are given in data type
+    argument are value of that parameter
+     */
+    var addResult=addFunction(2,8)
+    println("Result is $addResult")
+
+    var avgResult= avgFunction(4.90,19.75)
+    println("Average is $avgResult")
 }
+
+//function
+fun myFunction(){
+    println("This is my function")
+}
+
+//method is different from function it created within a class
+//here function is not created in a class
+//parameter function
+//a function with return type int
+fun addFunction(a: Int,b: Int) : Int{
+    return a+b
+}
+
+fun avgFunction(a: Double,b: Double) : Double{
+    return (a+b)/2
+}
+
