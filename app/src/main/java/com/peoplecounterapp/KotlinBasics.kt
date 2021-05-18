@@ -219,12 +219,28 @@ fun main() {
         else -> println("You are too young")
     }
 
-    var x: Any = 13.37
+    var x: Any = 13.37F
     when (x) {
-        //!is means not an int
-        !is Int -> println("$x is an Int")
-        is Double ->  println("$x is a Double")
+        //!is means not
+        is Int -> println("$x is an Int")
+        !is Double -> println("$x is not a Double")
         is String -> println("$x is a String")
         else -> println("$x is not the above")
+    }
+
+    //while loop executes the code repeatedly until the given condition is true
+    var i = 1
+    while (i <= 10) {
+        print("$i ")
+        i++
+    }
+    // \n break the line
+    println("\nwhile loop is done")
+
+    //in decreasing order
+    var j = 100
+    while (j >= 0) {
+        print("$j ")
+        j-=2
     }
 }
