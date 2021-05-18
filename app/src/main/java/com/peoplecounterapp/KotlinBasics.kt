@@ -179,5 +179,34 @@ fun main(){
 
     var isRainy=true
     if(isRainy)
-        println("Weather is cool")
+        println("Weather is Good")
+
+    //When statement
+    /*Kotlin when statement is replacement of
+    switch case from other language like c,c++ and java
+     */
+    //It is compact and powerful than switch statement
+    var season=3
+    when(season){
+        1 -> println("Spring")
+        2 -> println("Summer")
+        3 ->{
+            println("Fall")
+            println("Autumn")
+        }
+        4 -> println("Winter")
+        else -> println("Invalid Season")
+    }
+
+    //We can do like this using in keyword and ..
+    var month=12
+    when(month){
+        // alse write as in 3..5
+        3,4,5 -> println("Spring")
+        in 6..8 -> println("Summer")
+        in 9..11 -> println("Fall")
+        // also write as in 12..2 or 12,1,2
+        in 12 downTo 2 -> println("Winter")
+        else -> println("Invalid Season")
+    }
 }
