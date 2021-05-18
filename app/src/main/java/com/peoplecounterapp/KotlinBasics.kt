@@ -234,13 +234,36 @@ fun main() {
         print("$i ")
         i++
     }
-    // \n break the line
-    println("\nwhile loop is done")
 
     //in decreasing order
-    var j = 100
-    while (j >= 0) {
-        print("$j ")
-        j-=2
+     i = 100
+    while (i >= 0) {
+        print("$i ")
+        i-=2
     }
+    // \n break the line
+    println("\nwhile loop is done")
+    
+    var feltTemperature="Hot"
+    var roomTemperature=32
+    while (feltTemperature=="Hot"){
+        roomTemperature--
+        if(roomTemperature<20){
+            feltTemperature="Comfy"
+            println("It's comfy now")
+        }
+    }
+    
+
+    //do while loop
+   // i=1
+    i=15
+    do {
+        print("$i ")
+        i+=3
+    }while (i<=10)
+    println("\ndo while is done")
+
+    
+
 }
