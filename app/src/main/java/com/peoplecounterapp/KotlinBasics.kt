@@ -322,6 +322,36 @@ fun main() {
 
     var avgResult= avgFunction(4.90,19.75)
     println("Average is $avgResult")
+
+    //nullable in kotlin
+    var heyName: String="Nayan"
+    //we can't put null value because it is not nullable variable
+    //heyName=null
+
+    //for nullable variable only we need to put ? after Data type like(String?, Int?..)
+    //then this variable can also be null
+    var nullableName: String?="Nayan Gupta"
+    //nullableName=null
+
+    val len=heyName.length
+    println("Length is $len")
+
+    //it will show error because this value can also be null so we make is null safe by adding ? before .
+    //In kotlin we use only single line of code for checking null variable
+    val nullableLen=nullableName?.length
+    println("Nullable Length is $nullableLen")
+    // when nullableName=null then length is null
+    // and also if statement like this
+    nullableName?.let { println(it.length) }
+
+    //In Java we check the null variable by using multiple line of code
+   /* if(nullableName!=null){
+        val nullableLen=nullableName.length
+        println("Nullable Length is $nullableLen")
+    }else{
+        null
+    }*/
+
 }
 
 //function
@@ -337,6 +367,7 @@ fun addFunction(a: Int,b: Int) : Int{
     return a+b
 }
 
+//function with double return type
 fun avgFunction(a: Double,b: Double) : Double{
     return (a+b)/2
 }
