@@ -326,20 +326,22 @@ fun main() {
     //nullable in kotlin
     var heyName: String="Nayan"
     //we can't put null value because it is not nullable variable
-    //heyName=null
+    //heyName=null -> compilation error
+    val len=heyName.length
+    println(heyName.toLowerCase())
+    println("Length is $len")
 
     //for nullable variable only we need to put ? after Data type like(String?, Int?..)
     //then this variable can also be null
     var nullableName: String?="Nayan Gupta"
     //nullableName=null
 
-    val len=heyName.length
-    println("Length is $len")
-
     //it will show error because this value can also be null so we make is null safe by adding ? before .
     //In kotlin we use only single line of code for checking null variable
     val nullableLen=nullableName?.length
     println("Nullable Length is $nullableLen")
+    //safe called operator(?.)
+    println(nullableName?.toLowerCase())
     // when nullableName=null then length is null
     // and also if statement like this
     nullableName?.let { println(it.length) }
@@ -351,6 +353,29 @@ fun main() {
     }else{
         null
     }*/
+
+
+    //?: Elvis Operator and !! Not Null-Assertion
+    nullableName="Nayan"
+   // nullableName=null
+    // if nullableName is not null then it will print Nayan but it's value is null then it set the default value Guest
+    //with the use of elvis operator ?:
+    heyName=nullableName?:"Guest"
+    println("$heyName")
+
+    //!! not null assertion
+    /*
+    The !! operator converts a nullable type to a
+    non-null type, and throws a NullPointerException
+    if the nullable type holds a null value.
+    This is risky, and you should only use it if
+    you are 100% certain, that there will be a value in
+    the variable.
+     */
+    var nullValue: String?=null
+    //nullValue!!.toLowerCase()// null pointer exception
+    nullValue="NAYAN"
+    println(nullValue.toLowerCase())
 
 }
 
