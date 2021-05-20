@@ -344,7 +344,7 @@ fun main() {
     println(nullableName?.toLowerCase())
     // when nullableName=null then length is null
     // and also if statement like this
-    nullableName?.let { println(it.length) }
+    nullableName?.let { println("Length is ${it.length}")}
 
     //In Java we check the null variable by using multiple line of code
    /* if(nullableName!=null){
