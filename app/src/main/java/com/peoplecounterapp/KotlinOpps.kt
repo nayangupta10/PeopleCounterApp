@@ -27,6 +27,7 @@ fun main() {
      var iPhone = MobilePhone("ios", "Apple", "iPhone 12")
      var honor = MobilePhone()
      var vivo = MobilePhone(brand = "Vivo", model = "Note 5")
+    vivo.changeBattery(3)
 
      //shadowing
      shadowingFunction(5)
@@ -80,9 +81,24 @@ class Person(firstName: String = "Gaurav", lastName: String = "Garg") {
 
 //class MobilePhone(osName: String, brand: String, model: String){
 class MobilePhone(osName: String = "Android", brand: String = "Honor", model: String = "9 Lite") {
+    private var battery=30
 
     init {
         println("The Phone $model from $brand uses $osName as its Operating System")
+    }
+
+    //exercise
+    /*
+    Add a member to it, which indicates how much battery is left
+     (call it "battery". Initialize this value with a number between 0 and 50.Then add a function
+    "chargeBattery" Which needs details about how much was charged.
+    It should print out how much battery the phone had before,
+    how much was charged and how much it has now.
+    Create an Object of the class and call this function. Charge the battery by 30.*/
+    fun changeBattery(chargedBy: Int){
+
+        println("Battery was at $battery and is at ${battery+chargedBy} now ")
+        battery += chargedBy
     }
 }
 
