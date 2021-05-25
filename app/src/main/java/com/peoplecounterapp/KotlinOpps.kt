@@ -5,7 +5,7 @@ import java.lang.IllegalArgumentException
 fun main() {
     //creating object of class and call
     //agrument
-   /* var nayan = Person("Nayan", "Gupta", age = 32)
+    var nayan = Person("Nayan", "Gupta", age = 32)
     //age is overridden from age=32
      nayan.age = 31
      println("Nayan's age is ${nayan.age}")
@@ -39,13 +39,12 @@ fun main() {
     println("Brand is ${myCar.maxSpeed}")
     //we can not assign value because setter is private
     // myCar.myModel="M3"
-    println("Model is ${myCar.myModel}")*/
+    println("Model is ${myCar.myModel}")
 
     var newCar=NewCar("Audi","A3")
     var electricCar=ElectricCar("Tesla","S-3",85.0)
 
     //this fun is not in this class but due to inheritance it can extend all features of super class NewCar
-
     electricCar.extendedRange(200.0)
     electricCar.drive()
 
