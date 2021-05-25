@@ -5,7 +5,7 @@ import java.lang.IllegalArgumentException
 fun main() {
     //creating object of class and call
     //agrument
-    var nayan = Person("Nayan", "Gupta", age = 32)
+   /* var nayan = Person("Nayan", "Gupta", age = 32)
     //age is overridden from age=32
      nayan.age = 31
      println("Nayan's age is ${nayan.age}")
@@ -39,7 +39,22 @@ fun main() {
     println("Brand is ${myCar.maxSpeed}")
     //we can not assign value because setter is private
     // myCar.myModel="M3"
-    println("Model is ${myCar.myModel}")
+    println("Model is ${myCar.myModel}")*/
+
+    var newCar=NewCar("Audi","A3")
+    var electricCar=ElectricCar("Tesla","S-3",85.0)
+
+    //this fun is not in this class but due to inheritance it can extend all features of super class NewCar
+
+    electricCar.extendedRange(200.0)
+    electricCar.drive()
+
+    //polymorphism
+    //call from electric class
+    electricCar.drive(200)
+    //call from super class
+    newCar.drive(300)
+
 }
 
 //you can make constructor like this
@@ -157,4 +172,52 @@ class Car {
         this.owner = "Naveen"
     }
 }
+
+//Inheritance
+// a class in final by Default for inherit it we make it open by open keyword
+//Super class, Base Class, Parent Class of NewCar -
+// whose all features are inherited by its child class
+ open class Vehicle(){
+
+}
+
+//Sub Class, Derived Class, Child Class of Vehicle
+//Super class, Parent Class, Base Class of ElectricCar
+//sealed class - can't extends it
+open class NewCar(brand: String, model: String){
+
+    // so make it open for override
+    open var range: Double=0.0
+
+    //also for override make is open
+    open fun extendedRange(amount: Double){
+        if(amount>0){
+            range += amount
+        }
+    }
+
+   open fun drive(distance: Int){
+        println("Drove for $distance KM")
+    }
+}
+
+//for extending NewCar we have to make NewCar open
+//Sub Class, Derived Class, Child Class of NewCar
+class ElectricCar(brand: String, model: String, batteryLife: Double=85.0): NewCar(brand, model){
+
+    //we can't override super class fun and variable so to do this we have to make that open
+
+    override var range: Double=batteryLife*6
+
+    override fun drive(distance: Int) {
+        super.drive(distance)
+        println("Drove for $distance KM on electricity")
+    }
+
+    fun drive(){
+        println("Drove for $range KM on electricity")
+    }
+}
+
+
 
