@@ -1,6 +1,7 @@
 package com.peoplecounterapp
 
 import java.lang.IllegalArgumentException
+import javax.xml.transform.dom.DOMLocator
 
 fun main() {
     //creating object of class and call
@@ -41,8 +42,8 @@ fun main() {
     // myCar.myModel="M3"
     println("Model is ${myCar.myModel}")
 
-    var newCar=NewCar("Audi","A3")
-    var electricCar=ElectricCar("Tesla","S-3",85.0)
+    var newCar=NewCar("A3","Audi")
+    var electricCar=ElectricCar("S-model","Tesla",85.0)
 
     //this fun is not in this class but due to inheritance it can extend all features of super class NewCar
     electricCar.extendedRange(200.0)
@@ -50,9 +51,9 @@ fun main() {
 
     //polymorphism
     //call from electric class
-    electricCar.drive(200)
+    electricCar.drive(200.0)
     //call from super class
-    newCar.drive(300)
+    newCar.drive(300.0)
 
 }
 
@@ -173,17 +174,9 @@ class Car {
 }
 
 //Inheritance
-// a class in final by Default for inherit it we make it open by open keyword
-//Super class, Base Class, Parent Class of NewCar -
-// whose all features are inherited by its child class
- open class Vehicle(){
-
-}
-
-//Sub Class, Derived Class, Child Class of Vehicle
 //Super class, Parent Class, Base Class of ElectricCar
 //sealed class - can't extends it
-open class NewCar(brand: String, model: String){
+open class NewCar(brand: String, name: String){
 
     // so make it open for override
     open var range: Double=0.0
@@ -195,20 +188,19 @@ open class NewCar(brand: String, model: String){
         }
     }
 
-   open fun drive(distance: Int){
+   open fun drive(distance: Double){
         println("Drove for $distance KM")
     }
 }
 
 //for extending NewCar we have to make NewCar open
 //Sub Class, Derived Class, Child Class of NewCar
-class ElectricCar(brand: String, model: String, batteryLife: Double=85.0): NewCar(brand, model){
+class ElectricCar(brand: String, name: String, batteryLife: Double=85.0): NewCar(brand, name){
 
     //we can't override super class fun and variable so to do this we have to make that open
-
     override var range: Double=batteryLife*6
 
-    override fun drive(distance: Int) {
+    override fun drive(distance: Double) {
         super.drive(distance)
         println("Drove for $distance KM on electricity")
     }
