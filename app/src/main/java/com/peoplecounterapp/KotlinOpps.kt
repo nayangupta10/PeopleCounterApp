@@ -6,7 +6,7 @@ import javax.xml.transform.dom.DOMLocator
 fun main() {
     //creating object of class and call
     //agrument
- /*   var nayan = Person("Nayan", "Gupta", age = 32)
+    var nayan = Person("Nayan", "Gupta", age = 32)
     //age is overridden from age=32
      nayan.age = 31
      println("Nayan's age is ${nayan.age}")
@@ -40,13 +40,13 @@ fun main() {
     println("Brand is ${myCar.maxSpeed}")
     //we can not assign value because setter is private
     // myCar.myModel="M3"
-    println("Model is ${myCar.myModel}")*/
+    println("Model is ${myCar.myModel}")
 
-    var audiA3=NewCar(200.0,"A3","Audi")
-    var teslaS=ElectricCar(240.0,"S-model","Tesla",85.0)
+    var audiA3=NewCar("A3","Audi")
+    var teslaS=ElectricCar("S-model","Tesla",85.0)
 
     //this fun is not in this class but due to inheritance it can extend all features of super class NewCar
-  //  teslaS.extendedRange(200.0)
+    teslaS.extendedRange(200.0)
     teslaS.chargerType="type2"
     teslaS.drive()
 
@@ -55,10 +55,6 @@ fun main() {
     teslaS.drive(200.0)
     //call from super class
     audiA3.drive(300.0)
-
-    teslaS.brake()
-    audiA3.brake()
-
 }
 
 //you can make constructor like this
@@ -177,25 +173,11 @@ class Car {
     }
 }
 
-/*
-Interfaces in Kotlin can contain declarations of abstract methods,
-as well as method implementations.
-What makes them different from abstract classes is that interfaces
-cannot store state. They can have properties but these need
-to be abstract or to provide accessor implementations.
-*/
-interface Drivable{
-    var maxSpeed: Double
-    fun drive(): String
-    fun brake(){
-        println("The Drivable is braking")
-    }
 
-}
 //Inheritance
 //Super class, Parent Class, Base Class of ElectricCar
 //sealed class - can't extends it
-open class NewCar(override var maxSpeed: Double,brand: String, name: String): Drivable{
+open class NewCar(brand: String, name: String){
 
     // so make it open for override
     open var range: Double=0.0
@@ -210,11 +192,6 @@ open class NewCar(override var maxSpeed: Double,brand: String, name: String): Dr
    open fun drive(distance: Double){
         println("Drove for $distance KM")
     }
-
-    //override fun drive(): String ="Driving the interface drivable"
-    override fun drive(): String {
-       return "Driving the interface drivable"
-    }
 }
 
 /*
@@ -226,7 +203,7 @@ are defined for all kotlin classes
 
 //for extending NewCar we have to make NewCar open
 //Sub Class, Derived Class, Child Class of NewCar
-class ElectricCar(maxSpeed: Double, brand: String, name: String, batteryLife: Double=85.0): NewCar(maxSpeed, brand, name){
+class ElectricCar(brand: String, name: String, batteryLife: Double=85.0): NewCar(brand, name){
 
     //we can't override super class fun and variable so to do this we have to make that open
     override var range: Double=batteryLife*6
@@ -237,17 +214,10 @@ class ElectricCar(maxSpeed: Double, brand: String, name: String, batteryLife: Do
         println("Drove for $distance KM on electricity")
     }
 
-    override fun drive(): String{
+     fun drive(){
         println("Drove for $range KM on electricity")
-        return "Drove for $range KM on electricity"
     }
 
-    //if we call this function then firstly it call super.brake() - "The Drivable is braking"
-    //then call it- "Brake is inside the electric car
-    override fun brake() {
-        super.brake()
-        println("Brake is inside the electric car")
-    }
 }
 
 
