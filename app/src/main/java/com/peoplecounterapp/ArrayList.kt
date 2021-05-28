@@ -34,7 +34,19 @@ fun main(){
     println("Size of ArrayList: ${arrayList1.size}")
     println(arrayList1.get(1))//arrayList1[1]
 
-
+    //exercise
+    val arrayList3=ArrayList<Double>()
+    arrayList3.add(1.1)
+    arrayList3.add(1.2)
+    arrayList3.add(1.3)
+    arrayList3.add(1.4)
+    arrayList3.add(1.5)
+    var total=0.0
+    for(i in arrayList3){
+        total+=i
+    }
+    val avg=total/arrayList3.size
+   println("Average: $avg")
 
 
 
