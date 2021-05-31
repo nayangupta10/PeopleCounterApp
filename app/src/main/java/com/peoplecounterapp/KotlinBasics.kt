@@ -267,28 +267,28 @@ fun main() {
 
     //for loop
     for (num in 1..10) {
-        print("$num")
+        print(num)
     }
     println()
 
     //also write like this
     for (i in (1).until(10)) {// same as for(i in 1 until 10)
-        print("$i ")
+        print(i)
     }
     println()
 
     for (i in 10 downTo 1) {// same as for(i in (10).downTo(1))
-        print("$i ")
+        print(i )
     }
     println()
 
     for (i in (10).downTo(1) step 2) {// same as for(i in 10 downTo 1 step 2)
-        print("$i ")
+        print(i )
     }
     println()
 
     for (i in 1 until 10 step 3) {
-        print("$i ")
+        print(i )
     }
     print("\nfor loop is done\n")
 
@@ -377,6 +377,17 @@ fun main() {
     nullValue="NAYAN"
     println(nullValue.toLowerCase())
 
+    for(i in 1..100){
+        if(i%3==0)
+            print("Fizz$i ")
+        else if(i%5==0)
+            print("Buzz$i ")
+        else if(i%3==0 && i%5==0)
+            print("FizzBuzz$i ")
+        else
+            print("unknown")
+
+    }
 }
 
 //function

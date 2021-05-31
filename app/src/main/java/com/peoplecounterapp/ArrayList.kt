@@ -32,7 +32,7 @@ fun main(){
         println(itr.next())
     }
     println("Size of ArrayList: ${arrayList1.size}")
-    println(arrayList1.get(1))//arrayList1[1]
+    println(arrayList1[1])//println(arrayList1.get(1))
 
     //exercise
     val arrayList3=ArrayList<Double>()
@@ -48,8 +48,5 @@ fun main(){
     val avg=total/arrayList3.size
    println("Average: $avg")
 
-
-
-}
-class ArrayList<T> {
+    
 }
